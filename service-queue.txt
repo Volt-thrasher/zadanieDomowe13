@@ -1,0 +1,2 @@
+Auto;Nissan;Almera;2009;120000;3587456
+Auto;Opel;Astra;2004;245000;34897656

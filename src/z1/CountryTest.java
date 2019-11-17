@@ -10,8 +10,6 @@ public class CountryTest {
         try {
             Map<String, Country> countryMap = createMap();
             printCountryInfo(countryMap);
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -21,9 +19,7 @@ public class CountryTest {
         Scanner input = new Scanner(System.in);
         System.out.println("Podaj kod kraju, o którym chcesz zobaczyć informacje:");
         String code = input.nextLine();
-        if (map.get(code) != null) {
-            System.out.println(map.get(code));
-        } else if (map.get(code.toUpperCase()) != null) {
+        if (map.containsKey(code.toUpperCase())) {
             System.out.println(map.get(code.toUpperCase()));
         } else {
             System.out.println("Nie znaleziono kraju o podanym kodzie");

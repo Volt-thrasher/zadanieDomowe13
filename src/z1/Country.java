@@ -1,9 +1,9 @@
 package z1;
 
 public class Country {
-    String index;
-    String name;
-    String population;
+    private String index;
+    private String name;
+    private String population;
 
     public Country(String index, String name, String population) {
         this.index = index;

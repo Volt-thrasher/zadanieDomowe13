@@ -1,12 +1,12 @@
 package z2;
 
 public class Vehicle {
-    String type;
-    String producer;
-    String model;
-    int year;
-    String kilometer;
-    String vin;
+    private String type;
+    private String producer;
+    private String model;
+    private int year;
+    private String kilometer;
+    private String vin;
 
     public Vehicle(String type, String producer, String model, int year, String kilometer, String vin) {
         this.type = type;
@@ -65,15 +65,8 @@ public class Vehicle {
         this.vin = vin;
     }
 
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "type='" + type + '\'' +
-                ", producer='" + producer + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                ", kilometer='" + kilometer + '\'' +
-                ", vin='" + vin + '\'' +
-                '}';
+    public String toCsv() {
+        return type + ';'+ producer + ';'+ model + ';' +
+                 year + ";" + kilometer + ';'+ vin;
     }
 }
