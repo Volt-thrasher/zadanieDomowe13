@@ -35,7 +35,6 @@ public class CountryTest {
             String[] countries = line.split(";");
             countryMap.put(countries[0], new Country(countries[0], countries[1], countries[2]));
         }
-        bfr.close();
         return countryMap;
     }
 }
