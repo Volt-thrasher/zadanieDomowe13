@@ -39,12 +39,13 @@ public class TechStation {
                     if (service.isEmpty()) {
                         break;
                     } else {
-                        BufferedWriter bwr = new BufferedWriter(new FileWriter(new File("service-queue.txt")));
-                        for (Vehicle v : service) {
-                            bwr.write(v.toCsv());
-                            bwr.newLine();
+                        try (BufferedWriter bwr = new BufferedWriter(new FileWriter
+                                (new File("service-queue.txt")));) {
+                            for (Vehicle v : service) {
+                                bwr.write(v.toCsv());
+                                bwr.newLine();
+                            }
                         }
-                        bwr.close();
                         break;
                     }
                 case "1":
@@ -56,7 +57,7 @@ public class TechStation {
                     break;
                 case "2":
                     System.out.println("Nastepny pojazd do obslugi: ");
-                    System.out.println(service.peek());
+                    System.out.println(service.peek().toCsv());
                     break;
                 default:
                     System.out.println("Nieprawidlowa komenda");
